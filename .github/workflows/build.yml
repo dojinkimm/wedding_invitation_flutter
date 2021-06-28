@@ -1,0 +1,31 @@
+name: Flutter Web
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.GH_ACCESS_TOKEN}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'dev'
+      - run: flutter config --enable-web
+      - run: flutter pub get
+      - run: flutter build web --release
+      - run: |
+          cd build/web
+          git init
+          git config --global user.email dojinkim119@gmail.com
+          git config --global user.name dojinkimm
+          git status
+          git remote add origin https://${{secrets.GH_ACCESS_TOKEN}}@github.com/dojinkimm/wedding_invitation_flutter.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
