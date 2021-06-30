@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,flutter
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudiocode,flutter
 
+.DS_Store
+
 ### Flutter ###
 # Flutter/Dart/Pub related
 **/doc/api/
