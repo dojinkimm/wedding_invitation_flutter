@@ -44,9 +44,9 @@ class CongratulationGift extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20)),
             SizedBox(height: 50),
-            _buildButton(context, '신랑 김도진', '카카오뱅크 0000-00-0000000'),
+            _buildButton(context, '신랑 김도진', '카카오뱅크 3333-04-6486265'),
             SizedBox(height: 20),
-            _buildButton(context, '신부 김채은', '카카오뱅크 0000-00-0000000'),
+            _buildButton(context, '신부 김채은', '카카오뱅크 3333-08-2397114'),
           ],
         ));
   }
